@@ -1,8 +1,12 @@
 package com.taotao.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.taotao.service.ItemService;
+import com.taotao.util.EasyUIDataGridResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author apple
@@ -15,10 +19,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PageController {
 
+    private ItemService itemService;
+
+
+
     @RequestMapping("/")
     public String showIndex(){
         return "index";
     }
+
+    @RequestMapping("/item/list")
+    @ResponseBody
+    public EasyUIDataGridResult getItemList( Integer page, Integer rows) {
+
+
+
+        EasyUIDataGridResult result = itemService.getItemList(page, rows);
+        return result;
+    }
+
     /**
      * 展示菜单页面
      * @param page

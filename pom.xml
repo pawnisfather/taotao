@@ -8,7 +8,6 @@
         <module>common</module>
         <module>manage</module>
         <module>web</module>
-        <module>generator</module>
     </modules>
     <packaging>pom</packaging>
     <!-- 集中定义依赖版本号 -->

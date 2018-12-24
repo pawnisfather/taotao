@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="dao" />
-        <module name="generator" />
         <module name="interface" />
         <module name="pojo" />
         <module name="service" />
         <module name="web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="generator" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
