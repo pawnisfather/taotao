@@ -2,14 +2,19 @@ package com.taotao.service.Impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.taotao.mapper.TbItemDescMapper;
 import com.taotao.mapper.TbItemMapper;
 import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemDesc;
 import com.taotao.pojo.TbItemExample;
 import com.taotao.service.ItemService;
 import com.taotao.util.EasyUIDataGridResult;
+import com.taotao.util.IDUtils;
+import com.taotao.util.TaotaoResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,6 +29,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private TbItemMapper itemMapper;
+
+    @Autowired
+    private TbItemDescMapper itemDescMapper;
 
     @Override
     public EasyUIDataGridResult getItemList(int page, int rows) {
@@ -42,5 +50,24 @@ public class ItemServiceImpl implements ItemService {
 
         return result;
 
+    }
+
+    @Override
+    public TaotaoResult createItem(TbItem item, String desc) {
+        long longitemId  = IDUtils.genItemId();
+        item.setId(longitemId);
+        item.setStatus((byte) 1);
+        Date date = new Date();
+        item.setCreated(date);
+        item.setUpdated(date);
+        itemMapper.insert(item);
+        TbItemDesc itemDesc = new TbItemDesc();
+        itemDesc.setItemId(longitemId);
+        itemDesc.setItemDesc(desc);
+        itemDesc.setCreated(date);
+        itemDesc.setUpdated(date);
+        itemDescMapper.insert(itemDesc);
+
+        return TaotaoResult.ok();
     }
 }
