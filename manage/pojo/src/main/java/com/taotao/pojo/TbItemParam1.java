@@ -3,16 +3,21 @@ package com.taotao.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TbItemParam implements Serializable {
+/**
+ * @author apple
+ * @version V1.0
+ * @className TbItemParam1
+ * @Description
+ * @date 2019/1/4 上午12:19
+ */
+
+public class TbItemParam1 implements Serializable {
     private Long id;
-
     private Long itemCatId;
-
-    private Date created;
-
-    private Date updated;
-
+    private String itemCatName;
     private String paramData;
+    private Date created;
+    private Date updated;
 
     public Long getId() {
         return id;
@@ -30,6 +35,22 @@ public class TbItemParam implements Serializable {
         this.itemCatId = itemCatId;
     }
 
+    public String getItemCatName() {
+        return itemCatName;
+    }
+
+    public void setItemCatName(String itemCatName) {
+        this.itemCatName = itemCatName;
+    }
+
+    public String getParamData() {
+        return paramData;
+    }
+
+    public void setParamData(String paramData) {
+        this.paramData = paramData;
+    }
+
     public Date getCreated() {
         return created;
     }
@@ -44,13 +65,5 @@ public class TbItemParam implements Serializable {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
-    }
-
-    public String getParamData() {
-        return paramData;
-    }
-
-    public void setParamData(String paramData) {
-        this.paramData = paramData == null ? null : paramData.trim();
     }
 }

@@ -1,6 +1,7 @@
 package com.taotao.mapper;
 
 import com.taotao.pojo.TbItemParam;
+import com.taotao.pojo.TbItemParam1;
 import com.taotao.pojo.TbItemParamExample;
 import org.apache.ibatis.annotations.Param;
 
@@ -20,6 +21,7 @@ public interface TbItemParamMapper {
     List<TbItemParam> selectByExampleWithBLOBs(TbItemParamExample example);
 
     List<TbItemParam> selectByExample(TbItemParamExample example);
+
 
     TbItemParam selectByPrimaryKey(Long id);
 

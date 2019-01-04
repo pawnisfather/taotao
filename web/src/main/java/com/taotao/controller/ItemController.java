@@ -9,10 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
@@ -84,9 +82,17 @@ public class ItemController {
 
     @RequestMapping(value="/item/save", method=RequestMethod.POST)
     @ResponseBody
-    public TaotaoResult createItem(TbItem item, String desc) {
-        TaotaoResult result = itemService.createItem(item, desc);
+    public TaotaoResult createItem(TbItem item, String desc,String itemParams) {
+        TaotaoResult result = itemService.createItem(item, desc,itemParams);
         return result;
     }
+
+    @RequestMapping("/item/{itemId}")
+    public String showItemParam(@PathVariable Long itemId, Model model) {
+        String html = itemService.getItemParamHtml(itemId);
+        model.addAttribute("html", html);
+        return "itemparam";
+    }
+
 
 }

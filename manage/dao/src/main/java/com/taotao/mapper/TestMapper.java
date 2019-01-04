@@ -1,5 +1,9 @@
 package com.taotao.mapper;
 
+import com.taotao.pojo.TbItemParam1;
+
+import java.util.List;
+
 /**
  * Demo class
  *
@@ -13,4 +17,7 @@ public interface TestMapper {
      * @return 当前时间
      */
     public String queryNow();
+
+    public List<TbItemParam1> selectAll();
+
 }

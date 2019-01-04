@@ -7,6 +7,9 @@
     <result column="created" jdbcType="TIMESTAMP" property="created" />
     <result column="updated" jdbcType="TIMESTAMP" property="updated" />
   </resultMap>
+
+
+
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.taotao.pojo.TbItemParam">
     <result column="param_data" jdbcType="LONGVARCHAR" property="paramData" />
   </resultMap>
@@ -104,6 +107,7 @@
       order by ${orderByClause}
     </if>
   </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />

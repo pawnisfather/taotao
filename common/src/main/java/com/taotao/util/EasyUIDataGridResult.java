@@ -27,4 +27,11 @@ public class EasyUIDataGridResult implements Serializable {
         this.rows = rows;
     }
 
+    @Override
+    public String toString() {
+        return "EasyUIDataGridResult{" +
+                "total=" + total +
+                ", rows=" + rows.toString() +
+                '}';
+    }
 }

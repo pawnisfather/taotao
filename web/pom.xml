@@ -122,7 +122,11 @@
                 <configuration>
                     <port>8081</port>
                     <path>/</path>
+                    <systemProperties>
+                        <JAVA_OPTS>-Xms256m -Xmx1024m -XX:MaxPermSize=256m</JAVA_OPTS>
+                    </systemProperties>
                 </configuration>
+
             </plugin>
         </plugins>
     </build>

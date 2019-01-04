@@ -6,4 +6,18 @@
     <select id="queryNow" resultType="string">
 		select NOW()
 	</select>
+	<resultMap id="BaseResultMap1" type="com.taotao.pojo.TbItemParam1">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="item_cat_id" jdbcType="BIGINT" property="itemCatId" />
+		<result column="name" jdbcType="VARCHAR" property="itemCatName"/>
+		<result column="created" jdbcType="TIMESTAMP" property="created" />
+		<result column="updated" jdbcType="TIMESTAMP" property="updated" />
+	</resultMap>
+	<resultMap extends="BaseResultMap1" id="ResultMapWithBLOBs" type="com.taotao.pojo.TbItemParam1">
+		<result column="param_data" jdbcType="LONGVARCHAR" property="paramData" />
+	</resultMap>
+
+	<select id="selectAll" resultMap="ResultMapWithBLOBs">
+    SELECT pa.id ,pa.item_cat_id ,it.`name` ,pa.param_data ,pa.created ,pa.updated FROM tb_item_param pa LEFT JOIN  tb_item_cat it on  pa.item_cat_id = it.id
+  </select>
 </mapper>

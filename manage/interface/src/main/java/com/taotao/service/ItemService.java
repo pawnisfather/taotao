@@ -13,5 +13,7 @@ import com.taotao.util.TaotaoResult;
 public interface ItemService {
     public EasyUIDataGridResult getItemList(int page, int rows);
 
-    public TaotaoResult createItem(TbItem tbItem,String desc);
+    public TaotaoResult createItem(TbItem tbItem,String desc,String itemParam);
+
+    public String getItemParamHtml(Long itemId);
 }

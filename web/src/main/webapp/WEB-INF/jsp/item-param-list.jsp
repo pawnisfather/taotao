@@ -49,7 +49,22 @@
         text:'编辑',
         iconCls:'icon-edit',
         handler:function(){
-        	$.messager.alert('提示','该功能未实现!');
+            var ids =getSelectionsIds();
+            if(ids.length == 0){
+                $.messager.alert('提示','未选中商品规格!');
+                return ;
+            }
+            var params = {"ids":ids};
+            $.post("/item/param/update",params, function(data){
+                if(data.status == 200){
+                    $.messager.alert('提示','删除商品规格成功!',undefined,function(){
+                        $("#itemParamList").datagrid("reload");
+                    });
+                }
+            });
+
+
+        	// $.messager.alert('提示','该功能未实现!');
         }
     },{
         text:'删除',

@@ -21,6 +21,7 @@
 			<a href="javascript:void(0)" class="easyui-linkbutton submit">提交</a>
 	    	<a href="javascript:void(0)" class="easyui-linkbutton close">关闭</a>
 		</td>
+
 	</tr>
 </table>
 <div  class="itemParamAddTemplate" style="display: none;">
@@ -35,7 +36,7 @@
 		</ul>
 	</li>
 </div>
-<script style="text/javascript">
+<script style="text:javascript">
 	$(function(){
 		TAOTAO.initItemCat({
 			fun:function(node){
