@@ -109,8 +109,14 @@
     values (#{id,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
       #{status,jdbcType=INTEGER}, #{sortOrder,jdbcType=INTEGER}, #{isParent,jdbcType=BIT}, 
       #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
+    <selectKey resultType="long" keyProperty="id" order="AFTER">
+      SELECT @@identity
+    </selectKey>
   </insert>
   <insert id="insertSelective" parameterType="com.taotao.pojo.TbContentCategory">
+    <selectKey resultType="long" keyProperty="id" order="AFTER">
+      SELECT @@identity
+    </selectKey>
     insert into tb_content_category
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

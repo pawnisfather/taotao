@@ -103,7 +103,7 @@ public class ItemServiceImpl implements ItemService {
         //遍历list生成html
         StringBuffer sb = new StringBuffer();
 
-        sb.append("<table cellpadding=\"0\" cellspacing=\"1\" width=\"100%\" border=\"0\" class=\"Ptable\">\n");
+        sb.append("<table cellpadding=\"0\" cellspacing=\"1\" width=\"50%\" border=\"2\" class=\"Ptable\">\n");
         sb.append("	<tbody>\n");
         for (Map map : mapList) {
             sb.append("		<tr>\n");
