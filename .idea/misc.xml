@@ -3,6 +3,8 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/manage/service" />
+    <file type="web" url="file://$PROJECT_DIR$/search-web" />
+    <file type="web" url="file://$PROJECT_DIR$/search/search-service" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-content/taotao-content-service" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-portal-web" />
     <file type="web" url="file://$PROJECT_DIR$/web" />

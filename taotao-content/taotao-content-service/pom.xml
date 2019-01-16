@@ -13,6 +13,7 @@
 
     <artifactId>taotao-content-service</artifactId>
     <dependencies>
+
         <dependency>
             <groupId>com.taotao</groupId>
             <artifactId>dao</artifactId>
@@ -88,6 +89,10 @@
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
         </dependency>
     </dependencies>
 

@@ -9,6 +9,9 @@
         <module name="dao" />
         <module name="interface" />
         <module name="pojo" />
+        <module name="searchinterface" />
+        <module name="searchservice" />
+        <module name="searchweb" />
         <module name="service" />
         <module name="taotao-portal-web" />
         <module name="taotaocontentinterface" />
